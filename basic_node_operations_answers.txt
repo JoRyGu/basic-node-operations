@@ -1,0 +1,29 @@
+1. Run the commands sort, wc, and uniqe on the commands.js file.
+   Explain how they work and what the output was.
+   - wc output was 75 newlines, 190 words, and 2060 bytes
+   - wc loops through a file and counts the number of newlines,
+     words, and bytes. Check my commands.js for an implementation
+     of this.
+
+    - sort output gave me every line in commands.js sorted alphabetically.
+    - sort breaks each line down and uses a merge sort to reorganize
+      each line alphabetically. Check my commands.js for an implementation
+      using quick sort.
+
+    - uniq output gave me every line in the program, because there were
+      no two consecutive lines that were the same.
+    - uniq returns every line in a program less any consecutive duplicate
+      lines. Check my commands.js for an implementation of this using
+      Array.prototype.filter().
+
+2. Using the pipe, connect at least two commands and run it on
+   commands.js. Explain what the output was and why the specific
+   data was outputted.
+   - I used this: sort commands.js | uniq | wc.
+   - The output gave me 53 newlines, 146words, and 1689 bytes. This is
+     because by using sort, it put all of the identical lines in consecutive
+     order, thereby allowing uniq to eliminate those duplicate lines, thereby
+     giving me a different result than just using wc commands.js.
+   - How this works is: the stdout of sort commands.js is piped into the
+     stdin of uniq, whose stdout is piped into the stdin of wc, whose stdout
+     is displayed in the console.
